@@ -7,7 +7,7 @@ const barlowCondensed = Barlow_Condensed({ subsets: ["latin"], weight: "600" });
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-12 md:p-24">
+    <main className="flex flex-col my-24 items-center p-12 md:p-20">
       <div className="flex flex-col gap-8 max-w-2xl">
         <h1 className={cn([
           barlowCondensed.className,

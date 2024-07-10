@@ -20,10 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(
         'antialiased',
-        'bg-hero bg-cover',
+        'bg-hero bg-no-repeat bg-cover bg-center bg-fixed',
         montserrat.className,
       )}>
-        <div className="backdrop-blur-md bg-white/30">
+        <div className="backdrop-blur-md bg-white/25">
           {children}
         </div>
         <Toaster />
