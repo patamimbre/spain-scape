@@ -3,8 +3,8 @@ import { unstable_flag as flag } from '@vercel/flags/next';
 export const isOpenAIEnabled = flag({
   key: 'openai-enabled',
   description: 'Enable OpenAI integration instead of Gemini',
-  decide: () => false,
-  defaultValue: false,
+  decide: () => true,
+  defaultValue: true,
 })
 
 export const isSerapiImagesEnabled = flag({
