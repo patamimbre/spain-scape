@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { travelsStorage } from '@/lib/storage/kv'
+import { cn } from "@/lib/utils"
 import { TravelWithImages } from '@/schemas/travel.schema'
 import { ChevronLeftIcon, Loader2Icon, MapPinIcon } from "lucide-react"
 import Image from "next/image"
@@ -23,18 +24,14 @@ type Props = {
 const TravelsPage = async (props: Props) => {
   return (
     <main className="flex flex-col p-16 gap-2">
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between gap-6">
         <h2 className="text-3xl font-semibold">SpainScape recommends you...</h2>
-        <Button variant="secondary" className="text-lg" asChild>
-          <Link href="/">
-            <ChevronLeftIcon size={24} className="mr-2"/>
-            Perform new search
-          </Link>
-        </Button>
+        <GoBackButton className="hidden md:flex" />
       </div>
       <Suspense fallback={<TravelsPageLoader />}>
         <TravelsList travelId={props.params.travelId} />
       </Suspense>
+      <GoBackButton className="flex md:hidden" />
     </main>
   )
 }
@@ -93,5 +90,14 @@ const TravelItem = ({ travel }: { travel: TravelWithImages }) => {
     </Card>
   )
 }
+
+const GoBackButton = ({ className }: { className: string}) => (
+  <Button variant="secondary" className={cn(["text-lg", className])} asChild>
+    <Link href="/">
+      <ChevronLeftIcon size={24} className="mr-2" />
+      Perform new search
+    </Link>
+  </Button>
+)
 
 export default TravelsPage
