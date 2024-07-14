@@ -23,7 +23,7 @@ type Props = {
 
 const TravelsPage = async (props: Props) => {
   return (
-    <main className="flex flex-col p-16 gap-2">
+    <main className="flex flex-col gap-2">
       <div className="flex flex-row justify-between gap-6">
         <h2 className="text-3xl font-semibold">SpainScape recommends you...</h2>
         <GoBackButton className="hidden md:flex" />

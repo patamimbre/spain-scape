@@ -19,13 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(
-        'antialiased',
-        'bg-hero bg-no-repeat bg-cover bg-center bg-fixed',
         montserrat.className,
+        'antialiased',
+        'p-8 md:p-12 min-h-screen bg-[#fbfbfb]',
+
       )}>
-        <div className="backdrop-blur-md bg-white/25">
-          {children}
-        </div>
+        {children}
         <Toaster />
       </body>
     </html>
